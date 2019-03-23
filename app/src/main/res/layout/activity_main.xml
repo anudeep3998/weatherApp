@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".ui.MainActivity">
+
+    <EditText
+            android:id="@+id/city_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/city_name_button"
+            app:layout_constraintTop_toTopOf="parent"
+            android:inputType="text"
+            android:hint="City Name"
+            android:importantForAutofill="no"
+            tools:ignore="UnusedAttribute"/>
+
+    <Button
+            android:id="@+id/city_name_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            app:layout_constraintStart_toEndOf="@id/city_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/city_name"
+            app:layout_constraintBottom_toBottomOf="@id/city_name"/>
+
+    <EditText
+            android:id="@+id/lat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lon"
+            app:layout_constraintTop_toBottomOf="@id/city_name"
+            android:inputType="numberDecimal"
+            android:hint="lat"
+            android:importantForAutofill="no"
+            tools:ignore="UnusedAttribute"/>
+    <EditText
+            android:id="@+id/lon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/lat"
+            app:layout_constraintEnd_toStartOf="@id/lat_lon_button"
+            app:layout_constraintTop_toBottomOf="@id/city_name"
+            android:inputType="numberDecimal"
+            android:hint="lon"
+            android:importantForAutofill="no"
+            tools:ignore="UnusedAttribute"/>
+
+    <Button
+            android:id="@+id/lat_lon_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            app:layout_constraintStart_toEndOf="@id/lon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/lat"
+            app:layout_constraintBottom_toBottomOf="@id/lat"/>
+
+    <EditText
+            android:id="@+id/zip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/zip_button"
+            app:layout_constraintTop_toBottomOf="@id/lat"
+            app:layout_constraintBottom_toTopOf="@id/chart"
+            app:layout_constraintVertical_bias="0"
+            android:inputType="text"
+            android:hint="Zip"
+            android:importantForAutofill="no"
+            tools:ignore="UnusedAttribute"/>
+
+    <Button
+            android:id="@+id/zip_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            app:layout_constraintStart_toEndOf="@id/zip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/zip"
+            app:layout_constraintBottom_toBottomOf="@id/zip"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/zip_button"/>
+
+    <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
